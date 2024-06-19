@@ -1,0 +1,6 @@
+@use "base";
+@import "global_commons";
+
+.problem-container {
+    @include secTwo-align;
+}

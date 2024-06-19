@@ -1,0 +1,49 @@
+@use "base";
+@import "global_commons";
+
+$border-radius: 6px;
+$border: 1px solid #dddddd;
+$ext-border-radius: 19px;
+
+.external-container {
+    @include secTwo-align;
+
+    &-link {
+        @extend %font-regular-bold;
+        color: #ac512d;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.source-container {
+    @include flex-base;
+
+    gap: 20px;
+
+    padding: 10px 15px;
+    width: max-content;
+
+    background-color: #f6f6f6;
+    border: $border;
+    border-radius: $ext-border-radius;
+
+    &-avatar {
+        @include flex-base;
+    }
+
+    &-name {
+        @extend %font-regular-bold;
+        font-size: 20px;
+        color: #121212;
+    }
+
+    &-nickname {
+        @extend %font-regular-bold;
+        color: #2b3b7b;
+    }
+
+    &:hover {
+        background-color: #dddddd;
+    }
+}

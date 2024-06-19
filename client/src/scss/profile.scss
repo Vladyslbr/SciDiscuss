@@ -1,0 +1,99 @@
+@use "base";
+@import "global_commons";
+
+$border-radius: 6px;
+$border: 1px solid #dddddd;
+$border-hover: 1px solid #121212;
+$ext-border-radius: 19px;
+
+.generate-pairs {
+    background-color: #f6f6f6;
+    border: $border;
+    border-radius: $ext-border-radius;
+
+    max-width: max-content;
+    min-width: 20vw;
+    padding: 25px;
+    
+    &-item-public {
+        border-radius: $border-radius;
+        background-color: #dddddd;
+        padding: 10px;
+    }
+
+    &-item-private {
+        border-radius: $border-radius;
+        background-color: #ffc1c1;
+        padding: 10px;
+    }
+
+    p {
+        @extend %font-regular-bold;
+        color: #121212;
+    }
+}
+
+.profile-container {
+    @include secTwo-align;
+
+    &-main {
+        @include flex-base;
+        flex-direction: column;
+    }
+
+    //&-avatar {}
+
+    &-name {
+        margin-top: 10px;
+
+        h2 {
+            @extend %font-h2;
+        }
+    }
+
+    &-nickname {
+        margin-top: 8px;
+
+        span {
+            @extend %font-regular-bold;
+            color: #121212;
+        }
+    }
+
+    &-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
+.follow-btn {
+    display: flex;
+
+    border-radius: 5px;
+    padding: 6px 38px;
+
+    background: #ac512d;
+    cursor: pointer;
+
+    span {
+        @extend %font-regular-bold;
+        color: #f6f6f6;
+    }
+
+    &:hover {
+        background: #e06e40;
+    }
+}
+
+.followings-container {
+    &-label {
+        @extend %font-regular-bold;
+        color: #6a6a6a;
+    }
+
+    &-counter {
+        @extend %font-regular-bold;
+        color: #6a6a6a;
+    }
+}

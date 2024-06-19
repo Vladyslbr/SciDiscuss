@@ -1,0 +1,16 @@
+$font-path: "../../public/fonts/inter/static";
+
+// regular
+@font-face {
+    src: url("#{$font-path}/Inter-Regular.ttf") format("truetype");
+    font-family: "Inter";
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    src: url("#{$font-path}/Inter-Bold.ttf") format("truetype");
+    font-family: "Inter";
+    font-weight: bold;
+    font-style: normal;
+}

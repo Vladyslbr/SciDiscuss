@@ -1,0 +1,63 @@
+@use "base";
+@import "global_commons";
+
+$border-radius: 6px;
+$border: 1px solid #dddddd;
+$border-hover: 1px solid #121212;
+$ext-border-radius: 19px;
+
+.submit-form-btn {
+    //all: unset;
+    display: flex;
+
+    border-radius: 5px;
+    padding: 6px 38px;
+
+    border: none;
+
+    background: #ac512d;
+    cursor: pointer;
+
+    @extend %font-regular-bold;
+    color: #f6f6f6;
+
+    &:hover {
+        background: #e06e40;
+    }
+}
+
+.submit-author-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 20px;
+    margin-bottom: 50px;
+    row-gap: 15px;
+
+    input {
+    
+        width: 50vw;
+        height: 60px;
+    
+        background-color: #fafafa;
+        border: $border;
+        border-radius: $border-radius;
+    
+        cursor: pointer;
+    
+        &-input {
+            background-color: #fafafa;
+            outline: none;
+            background-image: none;
+            border: none;
+            box-shadow: none;
+            flex: 1 1;
+        }
+    }
+
+    // span {
+    //     @extend %font-regular-bold;
+    //     color: #121212;
+    // }
+};

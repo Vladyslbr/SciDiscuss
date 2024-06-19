@@ -1,0 +1,217 @@
+@import "global_commons";
+
+$border-radius: 6px;
+$border-To: 1px solid #2b3b7b;
+$border-From: 1px solid #ac512d;
+$ext-border-radius: 19px;
+
+
+.linksToFrom-container {
+    @include flex-base;
+
+    border-radius: $border-radius;
+    padding: 5px 12px;
+
+    &__wrapper-linksTo {
+        @include flex-base;
+
+        border-radius: 0 $border-radius $border-radius 0;
+        padding: 5px 12px;
+        gap: 2px;
+
+        cursor: pointer;
+        background-color: #2b3b7b;
+        border: $border-To;
+
+        &:hover {
+            background-color: #f6f6f6;
+
+            .linksTo-icon {
+                svg {
+                    path {
+                        fill: #2b3b7b;
+                    }
+                }
+            }
+        
+            span {
+                color: #2b3b7b;
+            }
+        }
+    }
+
+    &__wrapper-linksFrom {
+        @include flex-base;
+
+        border-radius: $border-radius 0 0 $border-radius;
+        padding: 5px 12px;
+        gap: 2px;
+
+        cursor: pointer;
+        background-color: #ac512d;
+        border: $border-From;
+
+        &:hover {
+            background-color: #f6f6f6;
+
+            .linksFrom-icon {
+                svg {
+                    path {
+                        fill: #ac512d;
+                    }
+                }
+            }
+        
+            span {
+                color: #ac512d;
+            }
+        }
+    }
+}
+
+.linksTo {
+    @include flex-base;
+
+    border-radius: $border-radius;
+    padding: 5px 12px;
+    gap: 2px;
+
+    cursor: pointer;
+    background-color: #2b3b7b;
+    border: $border-To;
+
+    &-icon {
+        @extend %standart-icon;
+    }
+
+    &-counter {
+        @include flex-base;
+
+        span {
+            @extend %font-regular-bold;
+            color: #f6f6f6;
+        }
+    }
+
+    &:hover {
+        background-color: #f6f6f6;
+
+        .linksTo-icon {
+            svg {
+                path {
+                    fill: #2b3b7b;
+                }
+            }
+        }
+    
+        span {
+            color: #2b3b7b;
+        }
+    }
+}
+
+.linksFrom {
+    @include flex-base;
+
+    border-radius: $border-radius;
+    padding: 5px 12px;
+    gap: 2px;
+
+    cursor: pointer;
+    background-color: #2b3b7b;
+
+    &-icon {
+        @extend %standart-icon;
+    }
+
+    &-counter {
+        @include flex-base;
+
+        span {
+            @extend %font-regular-bold;
+            color: #f6f6f6;
+        }
+    }
+}
+
+.linksToList {
+    @include flex-base;
+
+    border-radius: $border-radius;
+    padding: 5px 12px;
+    gap: 10px;
+
+    cursor: pointer;
+    background-color: #2b3b7b;
+    border: $border-To;
+
+    &-label {
+        @extend %font-regular-bold;
+        color: #f6f6f6;
+    }
+
+    &:hover {
+        background-color: #f6f6f6;
+
+        .linksTo-icon {
+            svg {
+                path {
+                    fill: #2b3b7b;
+                }
+            }
+        }
+    
+        span {
+            color: #2b3b7b;
+        }
+    }
+}
+
+.linksFromList {
+    @include flex-base;
+
+    border-radius: $border-radius;
+    padding: 5px 12px;
+    gap: 10px;
+
+    cursor: pointer;
+    background-color: #ac512d;
+    border: $border-From;
+
+    &-label {
+        @extend %font-regular-bold;
+        color: #f6f6f6;
+    }
+
+    &:hover {
+        background-color: #f6f6f6;
+
+        .linksFrom-icon {
+            svg {
+                path {
+                    fill: #ac512d;
+                }
+            }
+        }
+
+        span {
+            color: #ac512d;
+        }
+    }
+}
+
+.linkedTo {
+    @include flex-base;
+
+    gap: 10px;
+
+    &-label {
+        @extend %font-regular-bold;
+        color: #979797;
+    }
+
+    &-link {
+        @extend %font-regular-bold;
+        color: #2b3b7b;
+    }
+}

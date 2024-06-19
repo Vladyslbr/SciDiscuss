@@ -1,0 +1,52 @@
+@import "fonts";
+
+%font-regular-normal {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+%font-regular-bold {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+%font-h2 {
+    color: #121212;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto;
+}
+
+%font-h3 {
+    color: #121212;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: bold;
+    margin: auto;
+}
+
+@mixin flex-base {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin secTwo-align {
+    display: flex;
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+%standart-icon {
+    @include flex-base;
+
+    svg {
+        path {
+            fill: #f6f6f6;
+        }
+    }
+}

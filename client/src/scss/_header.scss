@@ -1,0 +1,243 @@
+@import "global_commons";
+
+$border-radius: 6px;
+$border: 1px solid #dddddd;
+$ext-border-radius: 19px;
+$node-cont-topmargin: 25px;
+
+.header {
+    padding: 18px 100px;
+
+    background-color: #f6f6f6;
+    border-bottom: $border;
+
+    &-logo {
+        @include flex-base;
+
+        cursor: pointer;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+
+    &-actions {
+        @include flex-base;
+
+        gap: 40px;
+
+        span {
+            @extend %font-regular-bold;
+            color: #6a6a6a;
+
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &-profile {
+            display: flex;
+
+            border-radius: 5px;
+            padding: 6px 20px;
+
+            background: #ac512d;
+
+            cursor: pointer;
+
+            span {
+                color: #f6f6f6;
+            }
+
+            &:hover {
+                span {
+                    text-decoration: none;
+                }
+                background: #e06e40;
+            }
+        }
+    }
+}
+
+.search {
+    @include flex-base;
+    text-align: left;
+
+    width: 460px;
+    height: 37px;
+
+    background-color: #fafafa;
+    border: $border;
+    border-radius: $border-radius;
+
+    //cursor: pointer;
+
+    &-input {
+        //@extend %font-regular-normal;
+
+        background-color: #fafafa;
+        outline: none;
+        background-image: none;
+        border: none;
+        box-shadow: none;
+        flex: 1 1;
+    }
+
+    &-icon-search {
+        @include flex-base;
+
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    &-icon-pressToSearch {
+        @include flex-base;
+
+        margin-right: 8px;
+    }
+
+    &-icon-closeSearch {
+        @include flex-base;
+        margin-right: 12px;
+
+        cursor: pointer;
+
+        path {
+            fill: #6a6a6a;
+        }
+
+        display: none;
+    }
+
+    &:focus-within {
+        //width: 40vw;
+
+        .search-icon-pressToSearch {
+            display: none;
+        }
+
+        .search-icon-closeSearch {
+            display: flex;
+        }
+    }
+}
+
+.dialog {
+
+    &-overlay {
+        background-color: #6a6a6a5a;
+        position: fixed;
+        inset: 0;
+        animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    &-content {
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90vw;
+        max-width: 450px;
+        max-height: 85vh;
+        padding: 25px;
+        animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &-title {
+        @extend %font-regular-bold;
+        margin: 0;
+        font-size: 18px;
+    }
+
+    &-btn {
+        @include flex-base;
+        border: $border;
+        border-radius: 5px;
+        padding: 6px 20px;
+
+        background: #ac512d;
+        cursor: pointer;
+
+        @extend %font-regular-bold;
+        color: #f6f6f6;
+
+        &:hover {
+            background: #e06e40;
+        }
+
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+
+            margin-top: 25;
+        }
+    }
+
+    &-create-profile {
+        span {
+            @extend %font-regular-bold;
+            color: #6a6a6a;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    &-fieldset {
+        all: unset;
+
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin: 15px 0;
+        padding: 15px;
+
+        border: $border;
+        border-radius: $border-radius;
+
+        span {
+            @extend %font-regular-bold;
+        }
+
+        input {
+            outline: none;
+            border: none;
+            @extend %font-regular-normal;
+        }
+    }
+
+    &-close-btn {
+        all: unset;
+
+        font-family: inherit;
+        border-radius: 100%;
+        height: 25px;
+        width: 25px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--violet-11);
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: #dddddd;
+        }
+    }
+}
