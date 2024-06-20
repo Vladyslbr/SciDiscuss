@@ -35,8 +35,8 @@ Figure 2 - The general view of the data model
 
 ### Connections
 
-To ensure both incoming ( to $POB_{origin}$ ) and outgoing connections for content ( from to $POB_{origin}$ ), $VOB-to-many(VOB)$ type connections will be used. The relevance of outgoing connections will be determined by the latest version of the entity - $POB.latest(VOB.connections)$, while the relevance of incoming connections from (foreign) the set of entities $POB_n$ will be verified by the presence of a connection in the latest version (VOB, of foreign) to any of the versions ${ VOB \subseteq POB_{origin}}$ such that:
-$$Connections = \{POB_n.latest(VOB.connections)\} \subset POB_{origin}.any(VOB)$$
+To ensure both incoming ( to $POB_{origin}$ ) and outgoing connections for content ( from to $POB_{origin}$ ), $VOB-to-many(VOB)$ type connections will be used. The relevance of outgoing connections will be determined by the latest version of the entity - $POB.latest(VOB.connections)$, while the relevance of incoming connections from (foreign) the set of entities $POB_n$ will be verified by the presence of a connection in the latest version (VOB, of foreign) to any of the versions $\set{ VOB \subseteq POB_{origin} }$ such that:
+$$Connections = \set{ POB_n.latest(VOB.connections) } \subset POB_{origin}.any(VOB)$$
 
 ![figure3](./assets/images/connections-example.jpg)
 
@@ -44,11 +44,11 @@ Figure 3 - Simplified demonstration of connections between objects. POBb.latest(
 
 $$POB_c.latest(VOB) = VOB_{ver1}$$
 
-$$POB_a, connections = set\{VOB_{ver15}, VOB_{ver1}\}$$
+$$POB_a, connections = set\set{VOB_{ver15}, VOB_{ver1}}$$
 
 ### Persistent Object - POB and Author Object - AOB
 
-A Persistent Object can be viewed as an aggregator of VOB - incoming versions (states) ${ VOB \subseteq POB_{origin}}$. POB comes in two types: content POB and author POB (AOB).
+A Persistent Object can be viewed as an aggregator of VOB - incoming versions (states) $\set{ VOB \subseteq POB_{origin} }$. POB comes in two types: content POB and author POB (AOB).
 
 An author is also considered a persistent object aggregating their versions, with differences only in connections between objects and the type of POB.id. External connections from other objects will be in the form of $VOB-to-VOB.id$, whereas for authors, only their current state matters. Connections will be directly to their aggregating object rather than to a version: VOB-to-AOB.id, where current data will be taken from the latest version, i.e., AOB.latest(VOB).
 
@@ -287,14 +287,18 @@ If connecting to a cluster instead of a local database, use `MONGO_URI` only in 
 ### Running the Project
 
 1. **Client:**
-   - Navigate to the `client` directory.
-   - Run `npm install` to install dependencies.
-   - Use `npm run dev` to start the development server.
+   ```bash
+   cd client
+   npm install
+   npm run dev
+   ```
 
 2. **Server:**
-   - Navigate to the `server` directory.
-   - Run `npm install` to install dependencies.
-   - Use `npm run dev` to start the TypeScript server with hot-reloading.
+   ```bash
+   cd server
+   npm install
+   npm run dev
+   ```
 
 Make sure MongoDB is running locally or configure `MONGO_URI` if connecting to a cluster. Adjust environment variables as necessary for your deployment environment.
 
